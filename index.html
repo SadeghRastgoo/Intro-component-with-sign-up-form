@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+      type="image/png"
+    />
+    <title>Intro component with sign-up form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <section class="texts max-w">
+      <h2 class="texts__heading">Learn to code by watching others</h2>
+      <p class="texts__paragraph">
+        See how experienced developers solve problems in real-time. Watching
+        scripted tutorials is great, but understanding how developers think is
+        invaluable.
+      </p>
+    </section>
+    <section class="main max-w">
+      <a class="main__join-btn shadow radius" href="#"
+        ><span>Try it free 7 days</span> then $20/mo. thereafter</a
+      >
+      <form class="main__form shadow radius" novalidate action="#">
+        <div class="inp1 input form-elements">
+          <input
+            type="text"
+            name="firstname"
+            placeholder="First Name"
+            id="inp-fname"
+          />
+        </div>
+        <p class="empty">Placeholder</p>
+        <div class="inp2 input form-elements">
+          <input
+            type="text"
+            name="lasttname"
+            placeholder="Last Name"
+            id="inp-lname"
+          />
+        </div>
+        <p class="empty">Placeholder</p>
+        <div class="inp3 input form-elements">
+          <input
+            type="email"
+            name="email"
+            id="inp-email"
+            placeholder="Email Address"
+          />
+        </div>
+        <p class="empty">Placeholder</p>
+        <div class="inp4 input form-elements">
+          <input
+            type="password"
+            name="password"
+            id="inp-password"
+            placeholder="Password"
+          />
+        </div>
+        <p class="empty">Placeholder</p>
+        <button
+          type="button"
+          class="form-elements submit-btn"
+          type="submit"
+          id="inp-submit"
+        >
+          CLAIM YOUR FREE TRIAL
+        </button>
+        <p class="form__terms">
+          By clicking the button, you are agreeing to our
+          <span><a href="#">Terms and Services</a></span>
+        </p>
+      </form>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>
