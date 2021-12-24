@@ -1,13 +1,3 @@
-/* My Notes =>  
-
-- Mobile: 375px
-- Desktop: 1440px
-
-- Weights: 400, 500, 600, 700
-
-
-*/
-
 :root {
   --red: hsl(0, 100%, 74%);
   --green: hsl(154, 59%, 51%);
@@ -39,7 +29,6 @@ body {
   line-height: 1.5;
   color: #fff;
 
-  // Page Wrapper
   background: url(../images/bg-intro-mobile.png) var(--red);
   display: flex;
   flex-direction: column;
@@ -209,6 +198,9 @@ input:-webkit-autofill:active {
   }
 }
 
+.valid {
+  border: 2px solid var(--green) !important;
+}
 .invalid {
   border: 2px solid var(--red) !important;
 
@@ -222,7 +214,7 @@ input:-webkit-autofill:active {
     position: absolute;
     right: 2rem;
     top: 50%;
-    transform: translateY(-47%);
+    transform: translateY(-50%);
     width: 25px;
     height: 25px;
     transition: 0.3s opacity;
