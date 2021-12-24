@@ -5,6 +5,8 @@ const firstNameInp = document.getElementById("inp-fname");
 const lastNameInp = document.getElementById("inp-lname");
 const emailInp = document.getElementById("inp-email");
 const passwordInp = document.getElementById("inp-password");
+const alert = document.querySelector(".alert");
+const alertCloseBtn = document.querySelector(".alert-close");
 
 const validateEmail = (email) => {
   return String(email)
@@ -14,6 +16,19 @@ const validateEmail = (email) => {
     );
 };
 
+const alertFunctionality = function (showStatus, alertTxt, messageTxt) {
+  document.querySelector(".alert-heading").textContent = alertTxt;
+  document.querySelector(".alert-message").textContent = messageTxt;
+  if (showStatus) {
+    alert.classList.remove("error-alert");
+    alert.classList.add("success-alert");
+  } else {
+    alert.classList.remove("success-alert");
+    alert.classList.add("error-alert");
+  }
+};
+
+let status = 0;
 const invalidInput = function (message, parentClass) {
   parentClass.classList.add("invalid");
   document
@@ -21,6 +36,7 @@ const invalidInput = function (message, parentClass) {
     .classList.add("message");
   document.querySelector(`.${parentClass.classList[0]} + p`).textContent =
     message;
+  status -= 1;
 };
 const validInput = function (parentClass) {
   parentClass.classList.remove("invalid");
@@ -28,6 +44,7 @@ const validInput = function (parentClass) {
   document
     .querySelector(`.${parentClass.classList[0]} + p`)
     .classList.remove("message");
+  status += 1;
 };
 
 submitBtn.addEventListener("click", function () {
@@ -56,4 +73,14 @@ submitBtn.addEventListener("click", function () {
       ? invalidInput("Your password is weak", passwordInp.parentElement)
       : validInput(passwordInp.parentElement);
   }
+
+  if (!document.querySelector(".message")) {
+    alertFunctionality(true, "Success", "Your account has been saved");
+  } else {
+    alertFunctionality(false, "Error", "Make sure all inputs are correct");
+  }
+});
+
+alertCloseBtn.addEventListener("click", function () {
+  alert.classList.remove("success-alert", "error-alert");
 });
